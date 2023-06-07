@@ -5,6 +5,9 @@ Ci-dessous le diagramme de classes UML pour l'ensemble de ce programme  :
 title: D02-PersonneEtCopains
 ---
 classDiagram
+class Application {
+    +main(String[] args)$ void
+}
 class Personne {
     +int MAX_COPAINS$
     -String nom
@@ -15,7 +18,8 @@ class Personne {
     +toString() String
 }
 note for Personne "MAX_COPAINS = 10"
-Personne "1" o-- "0..n" Personne : copains
+Personne "1" o--> "0..n" Personne : copains
+Application ..> Personne : utilise
 ```
 
 
